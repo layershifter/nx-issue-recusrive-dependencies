@@ -1,0 +1,43 @@
+{
+  "root": "libs/suite-pkg",
+  "sourceRoot": "libs/suite-pkg/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/suite-pkg",
+        "tsConfig": "libs/suite-pkg/tsconfig.lib.json",
+        "project": "libs/suite-pkg/package.json",
+        "entryFile": "libs/suite-pkg/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/suite-pkg/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/suite-pkg/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/suite-pkg"],
+      "options": {
+        "jestConfig": "libs/suite-pkg/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -1,7 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "core-pkg1": "libs/core-pkg1",
+    "core-pkg2": "libs/core-pkg2",
     "nxtest2": "apps/nxtest2",
-    "nxtest2-e2e": "apps/nxtest2-e2e"
+    "nxtest2-e2e": "apps/nxtest2-e2e",
+    "suite-pkg": "libs/suite-pkg"
   }
 }
